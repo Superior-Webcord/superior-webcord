@@ -11,14 +11,36 @@
         <link rel="stylesheet" type="text/css" href="lib/sensitive.css">
     </head>
 
-    <body>
-        <token>NTgyOTQ2MzAxNzUxMTk3Njk2.XO1NEg.UJrAGlhR6SIr0jt4v7eThJ_6DRI</token>
+    <body style="background-color:black;">
+        <token>NzE0NTg5Mjc0OTEzMzc0Mjc4.Xsw3Rg.KvfwoLaZx91iFe3SLHfwUym31bk</token>
         <log></log>
+        <!--  
+        <prefix>$</prefix>    
+        <config>
+            <joinchannel>Place Join channel Id here</joinchannel>
+            <leavechannel>Place Leave channel Id here</leavechannel>
+
+        </config>
+
+        <cmd name="Hello">
+            Nutte
+        </cmd>
+        -->
 
         <onmessage>
             <reply>I'm replying to you</reply>
             <message>And another message on the house</message>
         </onmessage>
+
+        <onjoin>
+            <channel>714588933631246401</channel>
+            <channelmessage>Test</channelmessage>
+        </onjoin>
+
+        <onleave>
+            <channel>714588933631246401</channel>
+            <channelmessage>Test</channelmessage>
+        </onleave>
 
     </body>
 
@@ -29,6 +51,7 @@
     <footer>
         <script type="text/javascript" src="lib/discord.js"></script>
         <script type="text/javascript" src="lib/discordhtml.js"></script>
+        
     </footer>
 
 </html>
