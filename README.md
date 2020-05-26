@@ -32,6 +32,12 @@ The first DiscordAPI for HTML!
     <reply>Reply the message author</reply>
     <message>Send another message after the response</message>
 </onmessage>
+
+<!--HOW TO DO COMMANDS-->
+<onmessage trigger="!help">
+    <reply>Simple help command</reply>
+    <message>Another message</message>
+</onmessage>
 ```
 
 ## TODO / In work
