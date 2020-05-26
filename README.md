@@ -1,6 +1,14 @@
 # Webcord
 The first DiscordAPI for HTML!
 
+## Set activity/presence
+```html
+<activity>
+    <text>Your heart</text>
+    <type>LISTENING</text>
+</activity>
+```
+
 ## Currently supported events
 ```html
 <onjoin>
