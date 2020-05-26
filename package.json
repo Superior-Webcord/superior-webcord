@@ -1,0 +1,28 @@
+{
+  "name": "discordhtml",
+  "version": "1.0.0",
+  "description": "The first DiscordAPI for HTML!",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jsdoc": "^3.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "doc": "jsdoc -c jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PixliesEarth/DiscordHTML.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PixliesEarth/DiscordHTML/issues"
+  },
+  "homepage": "https://github.com/PixliesEarth/DiscordHTML#readme"
+}

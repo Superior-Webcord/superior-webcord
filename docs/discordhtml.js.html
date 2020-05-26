@@ -1,4 +1,32 @@
-Log("Looking for token...");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: discordhtml.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: discordhtml.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>Log("Looking for token...");
 var token = document.getElementsByTagName("token")[0].innerHTML;
 var PREFIX = document.getElementsByName("prefix")
 Log("Found token.");
@@ -10,7 +38,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     var activity = document.getElementsByTagName("activity");
-    for (var i = 0; i < activity.length; i++) {
+    for (var i = 0; i &lt; activity.length; i++) {
         HandleActivity(activity[i].children);
     }
 
@@ -19,7 +47,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     var OnMessageHandlers = document.getElementsByTagName("onmessage");
-    for(var i = 0; i < OnMessageHandlers.length; i++){
+    for(var i = 0; i &lt; OnMessageHandlers.length; i++){
         if(msg.author.id !== client.user.id) {
             HandleOnMessage(OnMessageHandlers[i].children, msg);
         }
@@ -38,7 +66,7 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', member => {
     var OnGuildMemberAddHandlers = document.getElementsByTagName("onjoin");
-    for (var i = 0; i < OnGuildMemberAddHandlers.length; i++) {
+    for (var i = 0; i &lt; OnGuildMemberAddHandlers.length; i++) {
         if (member.id !== client.user.id)
             HandleJoin(OnGuildMemberAddHandlers[i].children, member.guild, member);
     }
@@ -46,7 +74,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
     var OnGuildMemberRemoveHandlers = document.getElementsByTagName("onleave");
-    for (var i = 0; i < OnGuildMemberRemoveHandlers.length; i++) {
+    for (var i = 0; i &lt; OnGuildMemberRemoveHandlers.length; i++) {
         if (member.user.id !== client.user.id)
             HandleLeave(OnGuildMemberRemoveHandlers[i].children, member.guild, member);
     }
@@ -62,7 +90,7 @@ client.on('error', error => {
 client.login(token);
 
 function HandleActivity(children){
-    for(var i = 0; i < children.length; i++){
+    for(var i = 0; i &lt; children.length; i++){
         var node = children[i];
         var text;
         var atype;
@@ -86,8 +114,8 @@ function Log(msg){
     
     var logtags = document.getElementsByTagName("log");
     var len = logtags.length
-    for(var i = 0; i < len; i++){
-        logtags[i].innerHTML += msg + "<br>";
+    for(var i = 0; i &lt; len; i++){
+        logtags[i].innerHTML += msg + "&lt;br>";
     }
 }
 
@@ -118,15 +146,15 @@ function Handleloops(variable, limit, func) {
  */
 
 function HandleOnMessage(children, msg){
-    for(var i = 0; i < children.length; i++){
+    for(var i = 0; i &lt; children.length; i++){
         var node = children[i];
 
         switch(node.tagName){
             case "REPLY":
-                msg.reply(node.innerHTML.replace(/&gt;/g, ">")).replace(/\\n/g, "\n")
+                msg.reply(node.innerHTML.replace(/&amp;gt;/g, ">")).replace(/\\n/g, "\n")
                 break;
             case "MESSAGE":
-                msg.channel.send(node.innerHTML.replace(/&gt;/g, ">").replace(/\\n/g, "\n"));
+                msg.channel.send(node.innerHTML.replace(/&amp;gt;/g, ">").replace(/\\n/g, "\n"));
                 break;
         }
     }
@@ -141,7 +169,7 @@ function HandleJoin(children, guild, member) {
     var channelmsg = null;
     var messagemember = null;
 
-    for (var i = 0; i < children.length; i++) {
+    for (var i = 0; i &lt; children.length; i++) {
         var node = children[i];
 
         switch (node.tagName) {
@@ -160,7 +188,7 @@ function HandleJoin(children, guild, member) {
                 break;
         }
 
-        if (channel && channelmsg) {
+        if (channel &amp;&amp; channelmsg) {
             channel.send(channelmsg);
         }
         if (messagemember) {
@@ -183,7 +211,7 @@ function HandleLeave(children, guild, member) {
     var channelmsg = null;
     var messagemember = null;
 
-    for (var i = 0; i < children.length; i++) {
+    for (var i = 0; i &lt; children.length; i++) {
         var node = children[i];
 
         switch (node.tagName) {
@@ -202,7 +230,7 @@ function HandleLeave(children, guild, member) {
                 break;
         }
 
-        if (channel && channelmsg) {
+        if (channel &amp;&amp; channelmsg) {
             channel.send(channelmsg);
         }
         if (messagemember) {
@@ -218,7 +246,7 @@ function readTextFile(file, callback) {
     rawFile.overrideMimeType("application/json");
     rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
+        if (rawFile.readyState === 4 &amp;&amp; rawFile.status == "200") {
             callback(rawFile.responseText);
         }
     }
@@ -233,4 +261,26 @@ function commandhandler(client, message) {
     
     args = message.content.slice(Prefix.length).trim().split(/ +/g);
  
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Handleleave">Handleleave</a></li><li><a href="global.html#Handleloops">Handleloops</a></li><li><a href="global.html#HandleOnMessage">HandleOnMessage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Tue May 26 2020 13:27:45 GMT+0200 (Central European Summer Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
