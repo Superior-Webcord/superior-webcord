@@ -14,6 +14,7 @@
     <body style="background-color:black;">
         <token>TOKEN HERE</token>
         <log></log>
+
         
         <activity>
             <text>Your mom</text>
@@ -25,9 +26,48 @@
             <message>And another message on the house</message>
         </onmessage>
 
-        <onmessage trigger="!info">
-            <message>**Information about Webcord**\n**Github:** https://github.com/PixliesEarth/Webcord \n**Info:** Webcord is a HTML wrapper for Discord.js, it allows you to create simple bots in HTML files, it already supports some essential events and functions, more to come!</message>
-        </onmessage>
+
+        <cmd name="help">
+
+            <run>
+                
+                <seddm id="%%AUTHOR%%">
+                    This is a dm.
+                </senddm>
+
+                <sendChannel id="CHANNELID">Message</sendChannel>
+
+                <RemoveRole member="" method="">
+                    <opt>
+                        <object>
+                            <prop name="role">ROLEID(replace this tho amena)</prop>
+                            <prop name="member">MEMBERID(replace this)</prop>
+                        </object>
+                    </opt>
+                </RemoveRole>
+
+
+                <function name="NAME">
+                   <var name="KEY">VALUE</var>
+                   <!--
+                       Replace method function
+                       target: the target youw want to replace
+                       opts(optional): "g" 
+                   -->
+                   <replace target="$" opts="g">VALUE</replace>
+                   <array name="NAME">VALUE1|VALUE2|VALUE3</array>
+                   <for limit="30" array="ARRAYNAME">WHAT TO DO WITH THE FOR</for>
+                </function>
+
+                <%=Thisismyvar>
+                <%for let amena in ebola {>
+                    <% javascript>
+                    <}%>
+                
+                <AddRole member="MEMBER" method="id">Role</AddRole>
+
+            </run>
+        </cmd>
 
         <onjoin>
             <channel>714588933631246401</channel>
@@ -38,6 +78,13 @@
             <channel>714588933631246401</channel>
             <channelmessage>Test</channelmessage>
         </onleave>
+
+        
+        <onReaction>
+            <!--
+                Classes we need to give access to: REACTION USER, REACTEDMESSAGE
+            -->
+        </onReaction>
 
     </body>
 
