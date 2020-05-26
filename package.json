@@ -7,9 +7,11 @@
     "lib": "lib"
   },
   "dependencies": {
-    "jsdoc": "^3.6.4"
+    "jsdoc": "^3.6.4",
+    "ink-docstrap": "^1.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "doc": "jsdoc -c jsdoc.json"
