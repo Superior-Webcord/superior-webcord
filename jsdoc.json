@@ -1,17 +1,27 @@
 {
     "source": {
-      "include": [ "lib" ],
+      "include": ["lib"],
       "includePattern": ".js$",
       "excludePattern": "(node_modules/|docs)"
     },
     "plugins": ["plugins/markdown"],
     "templates": {
+      "default": {
+        "outputSourceFiles": false
+      },
       "cleverLinks": true,
-      "monospaceLinks": true
+      "monospaceLinks": true,
+      "referenceTitle": "My SDK Name",
+        "disableSort": true,
+        "collapse": true,
+        "resources": {
+            "google": "https://www.google.com/"
+        }
     },
     "opts": {
       "recurse": true,
-      "destination": "./docs/"
+      "destination": "./docs/",
+      "template": "./node_modules/jsdoc/templates/jsdoc-fresh/"
     }
   }
   
